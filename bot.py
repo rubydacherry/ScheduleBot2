@@ -58,46 +58,46 @@ def main():
         '''
 
         if last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 0:
-            greet_bot.send_message('Monday pairs')
+            greet_bot.send_message(last_chat_id, 'Monday pairs')
 
         elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 1:
-            greet_bot.send_message('Tuesday pairs')
+            greet_bot.send_message(last_chat_id, 'Tuesday pairs')
 
         elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 2:
-            greet_bot.send_message('Wednesday pairs')
+            greet_bot.send_message(last_chat_id, 'Wednesday pairs')
 
         elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 3:
-            greet_bot.send_message('Thursday pairs')
+            greet_bot.send_message(last_chat_id, 'Thursday pairs')
 
         elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 4:
-            greet_bot.send_message('Friday pairs')
+            greet_bot.send_message(last_chat_id, 'Friday pairs')
 
         elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 5:
-            greet_bot.send_message('Saturday pairs')
+            greet_bot.send_message(last_chat_id, 'Saturday pairs')
 
         elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 6:
-            greet_bot.send_message('Sunday pairs')
+            greet_bot.send_message(last_chat_id, 'Sunday pairs')
 
         elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 0:
-            greet_bot.send_message('Monday pairs')
+            greet_bot.send_message(last_chat_id, 'Monday pairs')
 
         elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 1:
-            greet_bot.send_message('Tuesday pairs')
+            greet_bot.send_message(last_chat_id, 'Tuesday pairs')
 
         elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 2:
-            greet_bot.send_message('Wednesday pairs')
+            greet_bot.send_message(last_chat_id, 'Wednesday pairs')
 
         elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 3:
-            greet_bot.send_message('Thursday pairs')
+            greet_bot.send_message(last_chat_id, 'Thursday pairs')
 
         elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 4:
-            greet_bot.send_message('Friday pairs')
+            greet_bot.send_message(last_chat_id, 'Friday pairs')
 
         elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 5:
-            greet_bot.send_message('Saturday pairs')
+            greet_bot.send_message(last_chat_id, 'Saturday pairs')
 
         elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 6:
-            greet_bot.send_message('Sunday pairs')
+            greet_bot.send_message(last_chat_id, 'Sunday pairs')
 
 
         '''
