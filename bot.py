@@ -1,6 +1,7 @@
 import requests
 import datetime
 import time
+from time import sleep
 
 class BotHandler:
 
@@ -68,7 +69,7 @@ def main():
             today += 1
 
         new_offset = last_update_id + 1
-        last_update = ''
+        sleep(1)
         
 if __name__ == '__main__':  
     try:
