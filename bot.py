@@ -56,7 +56,7 @@ def main():
         '''
 
         if last_chat_text.lower() in pairs:
-            greet_bot.send_message(last_chat_id, 'Пары)0), {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, 'Пары)0), {}')
         '''
         elif last_chat_text.lower() in greetings and today == now.day and 6 <= hour < 12:
             greet_bot.send_message(last_chat_id, 'Доброе утро, {}'.format(last_chat_name))
