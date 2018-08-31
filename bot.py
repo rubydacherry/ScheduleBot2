@@ -53,9 +53,19 @@ def main():
         last_update = greet_bot.get_last_update()
         if last_update == False:
             continue
+        if !('message' in last_update.keys()):
+            continue
+        if !('text' in last_update['message'].keys()):
+            continue
+        if !('chat' in last_update['message'].keys()):    
+            continue
+        if !('id' in last_update['message'].keys()):        
+            continue
+        if !('update_id' in last_update.keys()):    
+            continue
+        last_update_id = last_update['update_id']
         last_chat_text = last_update['message']['text']
         last_chat_id = last_update['message']['chat']['id']
-        last_update_id = last_update['update_id']
 
         '''
         last_chat_name = last_update['message']['chat']['first_name']
