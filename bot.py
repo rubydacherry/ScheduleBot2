@@ -103,14 +103,14 @@ def main():
                                                     19:30-20:50: ''')
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 4) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 3):
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 264
-                                                    10:30-11:50: Лекц. Математический анализ, Марченко В.В., 261
-                                                    12:00-13:20: Лекц. Безопастность жизнедеятельности Клуб / Лекц. Алгебра, Попов А.М., 398
-                                                    13:30-14:50: Обед
-                                                    15:00-16:20: Пр. БЖД 258 / Пр. Алгебра 258
-                                                    16:30-17:50: 
-                                                    17:50-19:20: 
-                                                    19:30-20:50: ''')
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 264 \n
+                                                    10:30-11:50: Лекц. Математический анализ, Марченко В.В., 261 \n
+                                                    12:00-13:20: Лекц. Безопастность жизнедеятельности Клуб / Лекц. Алгебра, Попов А.М., 398 \n
+                                                    13:30-14:50: Обед \n
+                                                    15:00-16:20: Пр. БЖД 258 / Пр. Алгебра 258 \n
+                                                    16:30-17:50: \n
+                                                    17:50-19:20: \n
+                                                    19:30-20:50: \n''')
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 5) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 4):
             greet_bot.send_message(last_chat_id, 'Saturday pairs')
