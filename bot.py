@@ -9,7 +9,7 @@ class BotHandler:
         self.token = token
         self.api_url = "https://api.telegram.org/bot{}/".format(token)
 
-    def get_updates(self, offset=None, timeout=30):
+    def get_updates(self, offset=None, timeout=100):
         method = 'getUpdates'
         params = {'timeout': timeout, 'offset': offset}
         resp = requests.get(self.api_url + method, params)
@@ -28,15 +28,15 @@ class BotHandler:
         if len(get_result) > 0:
             last_update = get_result[-1]
         else:
-            # last_update = get_result[len(get_result)]
-            last_update = get_result[0]
+            last_update = get_result[len(get_result)]
 
         return last_update
 
 token = '693504057:AAF56kZHnpjAmWjvNiwLWTaEh0m0WBkQnbY'
 greet_bot = BotHandler(token)  
 greetings = ('здравствуй', 'привет', 'ку', 'здорово')
-pairs = ('пары', 'рассписание') 
+pairs1 = ('пары1', 'рассписание1', 'пары 1', 'рассписание 1')
+pairs2 = ('пары2', 'рассписание2', 'пары 2', 'рассписание 2')
 now = datetime.datetime.now()
 
 def main():  
@@ -57,8 +57,49 @@ def main():
         last_chat_name = 'кто-то'
         '''
 
-        if last_chat_text.lower() in pairs:
-            greet_bot.send_message(last_chat_id, 'Пары)0), {}')
+        if last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 0:
+            greet_bot.send_message('Monday pairs')
+
+        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 1:
+            greet_bot.send_message('Tuesday pairs')
+
+        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 2:
+            greet_bot.send_message('Wednesday pairs')
+
+        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 3:
+            greet_bot.send_message('Thursday pairs')
+
+        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 4:
+            greet_bot.send_message('Friday pairs')
+
+        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 5:
+            greet_bot.send_message('Saturday pairs')
+
+        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 6:
+            greet_bot.send_message('Sunday pairs')
+
+        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 0:
+            greet_bot.send_message('Monday pairs')
+
+        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 1:
+            greet_bot.send_message('Tuesday pairs')
+
+        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 2:
+            greet_bot.send_message('Wednesday pairs')
+
+        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 3:
+            greet_bot.send_message('Thursday pairs')
+
+        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 4:
+            greet_bot.send_message('Friday pairs')
+
+        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 5:
+            greet_bot.send_message('Saturday pairs')
+
+        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 6:
+            greet_bot.send_message('Sunday pairs')
+
+
         '''
         elif last_chat_text.lower() in greetings and today == now.day and 6 <= hour < 12:
             greet_bot.send_message(last_chat_id, 'Доброе утро, {}'.format(last_chat_name))
