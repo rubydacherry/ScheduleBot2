@@ -52,16 +52,22 @@ def main():
 
         last_update = greet_bot.get_last_update()
         if last_update == False:
+            new_offset = last_update_id + 1
             continue
         if not 'message' in last_update.keys():
+            new_offset = last_update_id + 1
             continue
         if not 'text' in last_update['message'].keys():
+            new_offset = last_update_id + 1
             continue
         if not 'chat' in last_update['message'].keys():
+            new_offset = last_update_id + 1
             continue
         if not 'id' in last_update['message'].keys():        
+            new_offset = last_update_id + 1
             continue
         if not 'update_id' in last_update.keys():    
+            new_offset = last_update_id + 1
             continue
         last_update_id = last_update['update_id']
         last_chat_text = last_update['message']['text']
