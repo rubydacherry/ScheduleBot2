@@ -64,75 +64,88 @@ def main():
 
         if (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 0) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 6) or last_chat_text.lower() == 'понедельник1':
             greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 480
-\n
-10:30-11:50: Лекц. Математический анализ, Марченко В.В., 398
-\n
-12:00-13:20: Лекц. Алгебра, Попов А.М., 399
-\n
-13:30-14:50: Обед
-\n
-15:00-16:20: Пр. Иностранный язык 475 / Русский язык 402
-\n
-16:30-17:50: Пр. Иностранный язык 475 / Русский язык 402 / ДПО "Модуль переводчика 475"
-\n
-17:50-19:20: ДПО "Модуль переводчика" 475
-\n
-19:30-20:50: ''')
+                                                    \n
+                                                    10:30-11:50: Лекц. Математический анализ, Марченко В.В., 398
+                                                    \n
+                                                    12:00-13:20: Лекц. Алгебра, Попов А.М., 399
+                                                    \n
+                                                    13:30-14:50: Обед
+                                                    \n
+                                                    15:00-16:20: Пр. Иностранный язык 475 / Русский язык 402
+                                                    \n
+                                                    16:30-17:50: Пр. Иностранный язык 475 / Русский язык 402 / ДПО "Модуль переводчика 475"
+                                                    \n
+                                                    17:50-19:20: ДПО "Модуль переводчика" 475
+                                                    \n
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 1) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 0)  or last_chat_text.lower() == 'вторник1':
             greet_bot.send_message(last_chat_id, '''09:00-10:20: 
-\n
-10:30-11:50: 
-\n
-12:00-13:20: Обед
-\n
-13:30-14:50: ФОК Мальченко А.Д.
-\n
-15:00-16:20: 
-\n
-16:30-17:50: 
-\n
-17:50-19:20:
-\n
-19:30-20:50: ''')
+                                                    \n
+                                                    10:30-11:50: 
+                                                    \n
+                                                    12:00-13:20: Обед
+                                                    \n
+                                                    13:30-14:50: ФОК Мальченко А.Д.
+                                                    \n
+                                                    15:00-16:20: 
+                                                    \n
+                                                    16:30-17:50: 
+                                                    \n
+                                                    17:50-19:20:
+                                                    \n
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 2) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 1) or last_chat_text.lower() == 'среда1':
             greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Аналитическая геометрия, 482
+                                                    \n
                                                     10:30-11:50: Пр. Основы риторики и коммуникации 264
+                                                    \n
                                                     12:00-13:20: Лекц. Аналитическая геометрия, Гольдман М.Л., 260
+                                                    \n
                                                     13:30-14:50: Обед
+                                                    \n
                                                     15:00-16:20: 
+                                                    \n
                                                     16:30-17:50: 
+                                                    \n
                                                     17:50-19:20: 
-                                                    19:30-20:50: ''')
+                                                    \n
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 3) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 2) or last_chat_text.lower() == 'четверг1':
             greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+                                                    \n
                                                     10:30-11:50: Лекц. Компьютерные науки и технологии программирования, Аносова Н.П., 398
+                                                    \n
                                                     12:00-13:20: Пр. Алгебра, 471
+                                                    \n
                                                     13:30-14:50: Обед
+                                                    \n
                                                     15:00-16:20: Лаб Комп. науки и техн. прогр. ДК-1
+                                                    \n
                                                     16:30-17:50: 
+                                                    \n
                                                     17:50-19:20: 
-                                                    19:30-20:50: ''')
+                                                    \n
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 4) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 3) or last_chat_text.lower() == 'пятница1':
             greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 264
-\n
-10:30-11:50: Лекц. Математический анализ, Марченко В.В., 261
-\n
-12:00-13:20: Лекц. Безопастность жизнедеятельности Клуб / Лекц. Алгебра, Попов А.М., 398 
-\n
-13:30-14:50: Обед
-\n
-15:00-16:20: Пр. БЖД 258 / Пр. Алгебра 258
-\n
-16:30-17:50:
-\n
-17:50-19:20:
-\n
-19:30-20:50:
-\n''')
+                                                    \n
+                                                    10:30-11:50: Лекц. Математический анализ, Марченко В.В., 261
+                                                    \n
+                                                    12:00-13:20: Лекц. Безопастность жизнедеятельности Клуб / Лекц. Алгебра, Попов А.М., 398 
+                                                    \n
+                                                    13:30-14:50: Обед
+                                                    \n
+                                                    15:00-16:20: Пр. БЖД 258 / Пр. Алгебра 258
+                                                    \n
+                                                    16:30-17:50:
+                                                    \n
+                                                    17:50-19:20:
+                                                    \n
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 5) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 4) or last_chat_text.lower() == 'суббота1':
             greet_bot.send_message(last_chat_id, 'Saturday pairs')
@@ -142,43 +155,71 @@ def main():
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 0) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 6) or last_chat_text.lower() == 'понедельник2':
             greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+                                                    \n
                                                     10:30-11:50: Лекц. Математический анализ, Марченко В.В., 398
+                                                    \n
                                                     12:00-13:20: Лекц. Алгебра, Попов А.М., 399
+                                                    \n
                                                     13:30-14:50: Обед
+                                                    \n
                                                     15:00-16:20: Пр. Иностранный язык 475 / Русский язык 402
+                                                    \n
                                                     16:30-17:50: Пр. Иностранный язык 475 / Русский язык 402 / ДПО "Модуль переводчика 475"
+                                                    \n
                                                     17:50-19:20: ДПО "Модуль переводчика" 475
-                                                    19:30-20:50: ''')
+                                                    \n
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 1) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 0) or last_chat_text.lower() == 'вторник2':
             greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 261
+                                                    \n
                                                     10:30-11:50: Пр. Основы риторики и коммуникации, 473
+                                                    \n
                                                     12:00-13:20: Обед
+                                                    \n
                                                     13:30-14:50: ФОК Мальченко А.Д.
+                                                    \n
                                                     15:00-16:20: 
+                                                    \n
                                                     16:30-17:50: 
+                                                    \n
                                                     17:50-19:20: 
-                                                    19:30-20:50: ''')
+                                                    \n
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 2) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 1) or last_chat_text.lower() == 'среда2':
             greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+                                                    \n
                                                     10:30-11:50: Пр. Аналитическая геометрия, 256
+                                                    \n
                                                     12:00-13:20: Лекц. Аналитическая геометрия, Гольдман М.Л., 260
+                                                    \n
                                                     13:30-14:50: Обед
+                                                    \n
                                                     15:00-16:20: 
+                                                    \n
                                                     16:30-17:50: 
+                                                    \n
                                                     17:50-19:20: 
-                                                    19:30-20:50: ''')
+                                                    \n
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 3) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 2) or last_chat_text.lower() == 'четверг2':
             greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 400
+                                                    \n
                                                     10:30-11:50: Лекц. Компьютерные науки и технологии программирования, Аносова Н.П., 398
+                                                    \n
                                                     12:00-13:20: Обед
+                                                    \n
                                                     13:30-14:50: Лаб Комп. науки и техн. прогр. ДК-1
+                                                    \n
                                                     15:00-16:20: Пр. Алгебра, 473
+                                                    \n
                                                     16:30-17:50: 
-                                                    17:50-19:20: 
-                                                    19:30-20:50: ''')
+                                                    \n
+                                                    17:50-19:20:
+                                                    \n
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 4) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 3) or last_chat_text.lower() == 'пятница2':
             greet_bot.send_message(last_chat_id, '''09:00-10:20:
@@ -195,7 +236,7 @@ def main():
                                                     \n
                                                     17:50-19:20: 
                                                     \n
-                                                    19:30-20:50: ''').replace('\t', '')
+                                                    19:30-20:50: ''').replace('    ', '')
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 5) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 4)  or last_chat_text.lower() == 'суббота2':
             greet_bot.send_message(last_chat_id, 'Saturday pairs')
