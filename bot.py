@@ -51,7 +51,8 @@ def main():
         last_update_id = last_update['update_id']
         last_chat_text = last_update['message']['text']
         last_chat_id = last_update['message']['chat']['id']
-        last_chat_name = last_update['message']['chat']['first_name']
+        #last_chat_name = last_update['message']['chat']['first_name']
+        last_chat_name = 'кто-то'
 
         if last_chat_text.lower() in pairs:
             greet_bot.send_message(last_chat_id, 'Пары)0), {}'.format(last_chat_name))
