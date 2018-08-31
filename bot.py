@@ -37,6 +37,9 @@ greet_bot = BotHandler(token)
 greetings = ('здравствуй', 'привет', 'ку', 'здорово')
 pairs1 = ('пары1', 'рассписание1', 'пары 1', 'рассписание 1')
 pairs2 = ('пары2', 'рассписание2', 'пары 2', 'рассписание 2')
+pairs1Tommorow = ('завтра1', 'завтра 1')
+pairs2Tommorow = ('завтра2', 'завтра 2')
+
 now = datetime.datetime.now()
 
 def main():  
@@ -59,46 +62,116 @@ def main():
         last_chat_name = 'кто-то'
         '''
 
-        if last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 0:
-            greet_bot.send_message(last_chat_id, 'Monday pairs')
+        if (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 0) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 6):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 480
+                                                    10:30-11:50: Лекц. Математический анализ, Марченко В.В., 398
+                                                    12:00-13:20: Лекц. Алгебра, Попов А.М., 399
+                                                    13:30-14:50: Обед
+                                                    15:00-16:20: Пр. Иностранный язык 475 / Русский язык 402
+                                                    16:30-17:50: Пр. Иностранный язык 475 / Русский язык 402 / ДПО "Модуль переводчика 475"
+                                                    17:50-19:20: ДПО "Модуль переводчика" 475
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 1:
-            greet_bot.send_message(last_chat_id, 'Tuesday pairs')
+        elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 1) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 0):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+                                                    10:30-11:50: 
+                                                    12:00-13:20: Обед
+                                                    13:30-14:50: ФОК Мальченко А.Д.
+                                                    15:00-16:20: 
+                                                    16:30-17:50: 
+                                                    17:50-19:20: 
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 2:
-            greet_bot.send_message(last_chat_id, 'Wednesday pairs')
+        elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 2) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 1):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Аналитическая геометрия, 482
+                                                    10:30-11:50: Пр. Основы риторики и коммуникации 264
+                                                    12:00-13:20: Лекц. Аналитическая геометрия, Гольдман М.Л., 260
+                                                    13:30-14:50: Обед
+                                                    15:00-16:20: 
+                                                    16:30-17:50: 
+                                                    17:50-19:20: 
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 3:
-            greet_bot.send_message(last_chat_id, 'Thursday pairs')
+        elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 3) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 2):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+                                                    10:30-11:50: Лекц. Компьютерные науки и технологии программирования, Аносова Н.П., 398
+                                                    12:00-13:20: Пр. Алгебра, 471
+                                                    13:30-14:50: Обед
+                                                    15:00-16:20: Лаб Комп. науки и техн. прогр. ДК-1
+                                                    16:30-17:50: 
+                                                    17:50-19:20: 
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 4:
-            greet_bot.send_message(last_chat_id, 'Friday pairs')
+        elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 4) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 3):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 264
+                                                    10:30-11:50: Лекц. Математический анализ, Марченко В.В., 261
+                                                    12:00-13:20: Лекц. Безопастность жизнедеятельности Клуб / Лекц. Алгебра, Попов А.М., 398
+                                                    13:30-14:50: Обед
+                                                    15:00-16:20: Пр. БЖД 258 / Пр. Алгебра 258
+                                                    16:30-17:50: 
+                                                    17:50-19:20: 
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 5:
+        elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 5) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 4):
             greet_bot.send_message(last_chat_id, 'Saturday pairs')
 
-        elif last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 6:
+        elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 6) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 5):
             greet_bot.send_message(last_chat_id, 'Sunday pairs')
 
-        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 0:
-            greet_bot.send_message(last_chat_id, 'Monday pairs')
+        elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 0) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 6):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+                                                    10:30-11:50: Лекц. Математический анализ, Марченко В.В., 398
+                                                    12:00-13:20: Лекц. Алгебра, Попов А.М., 399
+                                                    13:30-14:50: Обед
+                                                    15:00-16:20: Пр. Иностранный язык 475 / Русский язык 402
+                                                    16:30-17:50: Пр. Иностранный язык 475 / Русский язык 402 / ДПО "Модуль переводчика 475"
+                                                    17:50-19:20: ДПО "Модуль переводчика" 475
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 1:
-            greet_bot.send_message(last_chat_id, 'Tuesday pairs')
+        elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 1) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 0):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 261
+                                                    10:30-11:50: Пр. Основы риторики и коммуникации, 473
+                                                    12:00-13:20: Обед
+                                                    13:30-14:50: ФОК Мальченко А.Д.
+                                                    15:00-16:20: 
+                                                    16:30-17:50: 
+                                                    17:50-19:20: 
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 2:
-            greet_bot.send_message(last_chat_id, 'Wednesday pairs')
+        elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 2) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 1):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+                                                    10:30-11:50: Пр. Аналитическая геометрия, 256
+                                                    12:00-13:20: Лекц. Аналитическая геометрия, Гольдман М.Л., 260
+                                                    13:30-14:50: Обед
+                                                    15:00-16:20: 
+                                                    16:30-17:50: 
+                                                    17:50-19:20: 
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 3:
-            greet_bot.send_message(last_chat_id, 'Thursday pairs')
+        elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 3) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 2):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 400
+                                                    10:30-11:50: Лекц. Компьютерные науки и технологии программирования, Аносова Н.П., 398
+                                                    12:00-13:20: Обед
+                                                    13:30-14:50: Лаб Комп. науки и техн. прогр. ДК-1
+                                                    15:00-16:20: Пр. Алгебра, 473
+                                                    16:30-17:50: 
+                                                    17:50-19:20: 
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 4:
-            greet_bot.send_message(last_chat_id, 'Friday pairs')
+        elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 4) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 3):
+            greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+                                                    10:30-11:50: Лекц. Математический анализ, Марченко В.В., 261
+                                                    12:00-13:20: Лекц. Безопастность жизнедеятельности Клуб / Лекц. Алгебра, Попов А.М., 398
+                                                    13:30-14:50: Пр. БЖД 471 / Пр. Алгебра 471
+                                                    15:00-16:20: Обед
+                                                    16:30-17:50: 
+                                                    17:50-19:20: 
+                                                    19:30-20:50: ''')
 
-        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 5:
+        elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 5) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 4):
             greet_bot.send_message(last_chat_id, 'Saturday pairs')
 
-        elif last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 6:
+        elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 6) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 5):
             greet_bot.send_message(last_chat_id, 'Sunday pairs')
 
 
