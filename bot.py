@@ -101,7 +101,7 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 1) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 0)  or last_chat_text.lower() == 'вторник1':
-            greet_bot.send_message(last_chat_id, '''Вторринк (1)
+            greet_bot.send_message(last_chat_id, '''Вторник (1)
                                                     \n
                                                     09:00-10:20: 
                                                     \n
@@ -202,7 +202,7 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 1) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 0) or last_chat_text.lower() == 'вторник2':
-            greet_bot.send_message(last_chat_id, '''Вторринк (2)
+            greet_bot.send_message(last_chat_id, '''Вторник (2)
                                                     \n
                                                     09:00-10:20: Пр. Математический анализ, 261
                                                     \n
