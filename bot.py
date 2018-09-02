@@ -52,7 +52,6 @@ def main():
         last_update = greet_bot.get_last_update()
 
         if last_update == False:
-            new_offset += 1
             continue
         '''
         if not 'message' in last_update.keys():
