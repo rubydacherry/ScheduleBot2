@@ -81,7 +81,10 @@ def main():
         '''
 
         if (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 0) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 6) or last_chat_text.lower() == 'понедельник1':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 480
+            greet_bot.send_message(last_chat_id, '''
+                                                    Понедельник (1):
+                                                    \n
+                                                    09:00-10:20: Пр. Математический анализ, 480
                                                     \n
                                                     10:30-11:50: Лекц. Математический анализ, Марченко В.В., 398
                                                     \n
@@ -98,7 +101,9 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 1) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 0)  or last_chat_text.lower() == 'вторник1':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+            greet_bot.send_message(last_chat_id, '''Вторринк (1)
+                                                    \n
+                                                    09:00-10:20: 
                                                     \n
                                                     10:30-11:50: 
                                                     \n
@@ -115,7 +120,9 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 2) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 1) or last_chat_text.lower() == 'среда1':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Аналитическая геометрия, 482
+            greet_bot.send_message(last_chat_id, '''Среда (1)
+                                                    \n
+                                                    09:00-10:20: Пр. Аналитическая геометрия, 482
                                                     \n
                                                     10:30-11:50: Пр. Основы риторики и коммуникации 264
                                                     \n
@@ -132,7 +139,9 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 3) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 2) or last_chat_text.lower() == 'четверг1':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+            greet_bot.send_message(last_chat_id, '''Четверг (1)
+                                                    \n
+                                                    09:00-10:20: 
                                                     \n
                                                     10:30-11:50: Лекц. Компьютерные науки и технологии программирования, Аносова Н.П., 398
                                                     \n
@@ -149,7 +158,9 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs1 and datetime.datetime.today().weekday() == 4) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 3) or last_chat_text.lower() == 'пятница1':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 264
+            greet_bot.send_message(last_chat_id, '''Пятница (1)
+                                                    \n
+                                                    09:00-10:20: Пр. Математический анализ, 264
                                                     \n
                                                     10:30-11:50: Лекц. Математический анализ, Марченко В.В., 261
                                                     \n
@@ -172,7 +183,9 @@ def main():
             greet_bot.send_message(last_chat_id, 'Sunday pairs')
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 0) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 6) or last_chat_text.lower() == 'понедельник2':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+            greet_bot.send_message(last_chat_id, '''Понедельник (2):
+                                                    \n
+                                                    09:00-10:20: 
                                                     \n
                                                     10:30-11:50: Лекц. Математический анализ, Марченко В.В., 398
                                                     \n
@@ -189,7 +202,9 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 1) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 0) or last_chat_text.lower() == 'вторник2':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 261
+            greet_bot.send_message(last_chat_id, '''Вторринк (2)
+                                                    \n
+                                                    09:00-10:20: Пр. Математический анализ, 261
                                                     \n
                                                     10:30-11:50: Пр. Основы риторики и коммуникации, 473
                                                     \n
@@ -206,7 +221,9 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 2) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 1) or last_chat_text.lower() == 'среда2':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: 
+            greet_bot.send_message(last_chat_id, '''Среда (2)
+                                                    \n
+                                                    09:00-10:20: 
                                                     \n
                                                     10:30-11:50: Пр. Аналитическая геометрия, 256
                                                     \n
@@ -223,7 +240,9 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 3) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 2) or last_chat_text.lower() == 'четверг2':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20: Пр. Математический анализ, 400
+            greet_bot.send_message(last_chat_id, '''Четверг (2)
+                                                    \n
+                                                    09:00-10:20: Пр. Математический анализ, 400
                                                     \n
                                                     10:30-11:50: Лекц. Компьютерные науки и технологии программирования, Аносова Н.П., 398
                                                     \n
@@ -240,7 +259,9 @@ def main():
                                                     19:30-20:50: '''.replace('    ', ''))
 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 4) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 3) or last_chat_text.lower() == 'пятница2':
-            greet_bot.send_message(last_chat_id, '''09:00-10:20:
+            greet_bot.send_message(last_chat_id, '''Пятница (2)
+                                                    \n
+                                                    09:00-10:20:
                                                     \n
                                                     10:30-11:50: Лекц. Математический анализ, Марченко В.В., 261
                                                     \n
