@@ -218,7 +218,7 @@ def main():
                                                     17:50-19:20: 
                                                     \n
                                                     19:30-20:50: '''.replace('    ', ''))
-да 
+ 
         elif (last_chat_text.lower() in pairs2 and datetime.datetime.today().weekday() == 2) or (last_chat_text.lower() in pairs1Tommorow and datetime.datetime.today().weekday() == 1) or last_chat_text.lower() == 'среда2':
             greet_bot.send_message(last_chat_id, '''Среда (2)
                                                     \n
