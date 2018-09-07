@@ -52,13 +52,18 @@ token = '693504057:AAF56kZHnpjAmWjvNiwLWTaEh0m0WBkQnbY'
 greet_bot = BotHandler(token)
 today = datetime.datetime.today()
 is_week_odd = True
+is_new_week = False
 
 def main():
     new_offset = None
 
     while True:
-        if today.weekday() == 5:
+        if today.weekday() == 5 and is_new_week:
             is_week_odd = not is_week_odd
+            is_new_week == False
+
+        if today.weekday() == 6:
+            is_new_week == True
 
         greet_bot.get_updates(new_offset)
         last_update = greet_bot.get_last_update()
@@ -75,7 +80,7 @@ def main():
         is_requested_first_group = (group_number == 1)
 
         todays = ('пары', 'рассписание', 'сегодня')
-        
+
         if requested_weekday == 'завтра':
             requested_weekday = today.weekday() + 1
         elif requested_weekday in todays:
