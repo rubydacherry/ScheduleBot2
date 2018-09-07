@@ -72,6 +72,9 @@ def main():
         if last_update == False:
             continue
 
+        if !last_update['message']['text']:
+            continue
+        
         last_update_id = last_update['update_id']
         last_chat_id = last_update['message']['chat']['id']
 
