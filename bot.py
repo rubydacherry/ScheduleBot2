@@ -70,11 +70,8 @@ def main():
         last_update = greet_bot.get_last_update()
 
         if last_update == False:
-            continue
+            continue       
 
-        if !last_update['message']['text']:
-            continue
-        
         last_update_id = last_update['update_id']
         last_chat_id = last_update['message']['chat']['id']
 
