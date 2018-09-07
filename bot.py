@@ -50,7 +50,7 @@ def getWeekDay(wd):
 
 token = '693504057:AAF56kZHnpjAmWjvNiwLWTaEh0m0WBkQnbY'
 greet_bot = BotHandler(token)
-toady = datetime.datetime.today()
+today = datetime.datetime.today()
 is_week_odd = True
 
 def main():
