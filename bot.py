@@ -50,13 +50,13 @@ def getWeekDay(wd):
 
 token = '693504057:AAF56kZHnpjAmWjvNiwLWTaEh0m0WBkQnbY'
 greet_bot = BotHandler(token)
-today = datetime.datetime.today()
+now = datetime.datetime.now()
 is_week_odd = True
 
 def main():
     new_offset = None
-    today = today.day
-    hour = today.hour
+    today = now.day
+    hour = now.hour
 
     while True:
         if today.weekday() == 5:
