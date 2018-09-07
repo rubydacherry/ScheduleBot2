@@ -69,13 +69,17 @@ def main():
         last_update_id = last_update['update_id']
         last_chat_id = last_update['message']['chat']['id']
 
-        requested_weekday = last_update['message']['text'][:-1]
+        requested_weekday = last_update['message']['text'][:-1].lower()
         group_number = last_update['message']['text'][-1]
 
         is_requested_first_group = (group_number == 1)
 
+        todays = ('пары', 'рассписание', 'сегодня')
+        
         if requested_weekday == 'завтра':
             requested_weekday = today.weekday() + 1
+        elif requested_weekday in todays:
+            requested_weekday = today.weekday()
         else:
             requested_weekday = getWeekDay(requested_weekday)
 
