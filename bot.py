@@ -50,7 +50,6 @@ def getWeekDay(wd):
 
 token = '693504057:AAF56kZHnpjAmWjvNiwLWTaEh0m0WBkQnbY'
 greet_bot = BotHandler(token)
-today = datetime.datetime.today()
 is_week_odd = True
 is_new_week = False
 
@@ -58,7 +57,11 @@ def main():
     new_offset = None
     is_week_odd = True
 
+
     while True:
+
+        today = datetime.datetime.today()
+
         if today.weekday() == 5 and is_new_week:
             is_week_odd = not is_week_odd
             is_new_week == False
@@ -78,7 +81,7 @@ def main():
         requested_weekday = last_update['message']['text'][:-1].strip().lower()
         group_number = last_update['message']['text'][-1]
 
-        is_requested_first_group = (group_number == 1)
+        is_requested_first_group = (group_number == '1')
 
         todays = ('пары', 'рассписание', 'сегодня')
 
@@ -137,15 +140,15 @@ def main():
                 last_chat_id,
                 '''
                     Среда\n\n
+                    9:00-10:20: {}\n\n
                     10:30-11:50: {}\n\n
                     12:00-13:20: {}\n\n
-                    13:30-14:50: {}\n\n
-                    15:00-16:20: {}\n
+                    13:30-14:50: {}\n
                 '''.format(
-                        'Пр. Основы риторики и коммуникации 473' if is_requested_first_group else 'Пр. Аналитическая геометрия 256',
+                        'Пр. Аналитическая геометрия 482' if is_requested_first_group else ''
+                        'Пр. Основы риторики и коммуникации 264' if is_requested_first_group else 'Пр. Аналитическая геометрия 256',
                         'Лекц. Аналитическая геометрия, Гольдман М.Л., 260',
-                        'Обед',
-                        'Пр. Аналитическая геометрия 261' if is_requested_first_group else ''                       
+                        'Обед'
                     ).replace('    ', '')
             )
 
