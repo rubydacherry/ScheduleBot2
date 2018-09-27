@@ -55,7 +55,7 @@ is_new_week = False
 
 def main():
     new_offset = None
-    is_week_odd = True
+    is_week_odd = False
 
     while True:
 
