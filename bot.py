@@ -81,6 +81,7 @@ def main():
         group_number = last_update['message']['text'][-1]
 
         is_requested_first_group = (group_number == '1')
+        is_requested_first_group = !is_requested_first_group
 
         todays = ('пары', 'рассписание', 'сегодня')
 
