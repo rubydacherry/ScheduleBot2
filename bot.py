@@ -173,7 +173,7 @@ def main():
                         'Лекц. Матан 263',
                         'Пр. История 264' if is_requested_first_group else 'Пр. Матан 261',
                         'Обед',
-                        'Лаб. Компы 422'
+                        'Лаб. Компы 422'  if is_requested_first_group else ''
                     ).replace('    ', '')
             )
 
