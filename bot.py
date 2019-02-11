@@ -53,6 +53,14 @@ greet_bot = BotHandler(token)
 is_week_odd = True
 is_new_week = False
 
+'''
+Нужно:
+- Функция которая собирает рассписание (group, odd, day)
+- Функция аутпута (func Shedule output)
+'''
+
+don't workable
+
 def main():
     new_offset = None
     is_week_odd = False
