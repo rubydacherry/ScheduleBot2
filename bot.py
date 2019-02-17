@@ -59,8 +59,6 @@ is_new_week = False
 - Функция аутпута (func Shedule output)
 '''
 
-don't workable
-
 def main():
     new_offset = None
     is_week_odd = False
@@ -114,7 +112,7 @@ def main():
                     17:50-19:20: {}\n
                 '''.format(
                         '',
-                        'Пр. Алгебра 473',
+                        'Пр. Алгебра 473' if is_requested_first_group else '',
                         'Лекц. Алгебра, Попов А.М., 260',
                         'Обед',
                         'Пр. Иностранный язык 475 / Русский язык 402',
