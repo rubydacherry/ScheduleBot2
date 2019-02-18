@@ -197,8 +197,26 @@ def main():
     }
 
     group_schedule = group_one_schedule if is_requested_first_group else group_two_schedule
-    output(group_schedule, requested_weekday, last_chat_id, greet_bot)
-
+    #output(group_schedule, requested_weekday, last_chat_id, greet_bot)
+    greet_bot.send_message(
+                last_chat_id,
+                '''
+                    Четверг\n\n
+                    9:00-10:20: {}\n\n
+                    10:30-11:50: {}\n\n
+                    12:00-13:20: {}\n\n
+                    13:30-14:50: {}\n\n
+                    15:00-16:20: {}\n\n
+                    16:30-17:50: {}\n
+                '''.format(
+                        'Лекц./Пр. Проф. этика Лапшин И.Е. 104',
+                        'Пр. Матан 261' if is_requested_first_group else 'Пр. История 258',
+                        'Лекц. Матан 263',
+                        'Пр. История 264' if is_requested_first_group else 'Пр. Матан 261',
+                        'Обед',
+                        'Лаб. Компы 422'  if is_requested_first_group else ''
+                    ).replace('    ', '')
+    )
     new_offset = last_update_id + 1
 
 if __name__ == '__main__':  
