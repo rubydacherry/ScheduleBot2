@@ -48,6 +48,8 @@ def getWeekDay(wd):
         return 'Saturday'
     elif wd == 'воскресенье':
         return 'Monday'
+    else:
+        return 'Monday'
 
 def output(group_schedule, requested_weekday, last_chat_id, greet_bot):
     amount = len(group_schedule[requested_weekday])
@@ -74,7 +76,6 @@ def output(group_schedule, requested_weekday, last_chat_id, greet_bot):
                 ).replace('    ', '')
     )
         
-
 token = '693504057:AAF56kZHnpjAmWjvNiwLWTaEh0m0WBkQnbY'
 greet_bot = BotHandler(token)
 is_week_even = True
@@ -96,14 +97,14 @@ def main():
 
         last_update_id = last_update['update_id']
         last_chat_id = last_update['message']['chat']['id']
-'''
+
         requested_weekday = last_update['message']['text'][:-1].strip().lower()
         group_number = last_update['message']['text'][-1]
 
         is_requested_first_group = (group_number == '1')
 
         requested_weekday = getWeekDay(requested_weekday)
-'''
+
         group_one_schedule = {
                                 'Monday': [
                                             '', 
@@ -196,7 +197,7 @@ def main():
                                             ]
         }
 
-        group_schedule = group_one_schedule if is_requested_first_group else group_two_schedule
+        #group_schedule = group_one_schedule if is_requested_first_group else group_two_schedule
         #output(group_schedule, requested_weekday, last_chat_id, greet_bot)
         greet_bot.send_message(last_chat_id, 'Hello')
         new_offset = last_update_id + 1
