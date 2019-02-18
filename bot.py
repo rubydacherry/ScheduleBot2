@@ -46,10 +46,8 @@ def getWeekDay(wd):
         return 'Friday'
     elif wd == 'суббота':
         return 'Saturday'
-    elif wd == 'воскресенье':
-        return 'Monday'
     else:
-        return 'Monday'
+        return 'Sunday'
 
 def output(group_schedule, requested_weekday, last_chat_id, greet_bot):
     amount = len(group_schedule[requested_weekday])
@@ -148,7 +146,12 @@ def main():
                                 'Saturday': [
                                             'Лекц. Политология 104' if is_week_even else 'Пр. Психология Зал 1',
                                             'Лекц. Политология 104' if is_week_even else 'Пр. Психология Зал 1'
-                                            ]
+                                            ],
+
+                                'Sunday': [
+                                    'Проверь правописание',
+                                    'Неправильно написан день недели'
+                                ]
                             }
 
         group_two_schedule = {
@@ -194,7 +197,12 @@ def main():
                                 'Saturday': [
                                             'Лекц. Политология 104' if is_week_even else 'Пр. Психология Зал 1',
                                             'Лекц. Политология 104' if is_week_even else 'Пр. Психология Зал 1'
-                                            ]
+                                            ],
+
+                                'Sunday': [
+                                    'Проверь правописание',
+                                    'Неправильно написан день недели'
+                                ]
         }
 
         group_schedule = group_one_schedule if is_requested_first_group else group_two_schedule
