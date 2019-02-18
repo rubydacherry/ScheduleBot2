@@ -80,19 +80,11 @@ greet_bot = BotHandler(token)
 is_week_even = True
 is_new_week = False
 
-'''
-Нужно:
-- Функция которая собирает рассписание (group, odd, day)
-- Функция аутпута (func Shedule output)
-'''
-
 def main():
     new_offset = None
     is_week_even = False
 
     while True:
-
-        today = datetime.datetime.today()
 
         is_week_even = True if (math.ceil(datetime.date.max.toordinal() / 7) % 2) == 1 else False
 
@@ -110,14 +102,7 @@ def main():
 
         is_requested_first_group = (group_number == '1')
 
-        todays = ('пары', 'рассписание', 'сегодня')
-
-        if requested_weekday == 'завтра':
-            requested_weekday = today.weekday() + 1
-        elif requested_weekday in todays:
-            requested_weekday = today.weekday()
-        else:
-            requested_weekday = getWeekDay(requested_weekday)
+        requested_weekday = getWeekDay(requested_weekday)
 
     group_one_schedule = {
                             'Monday': [
@@ -213,25 +198,7 @@ def main():
 
     group_schedule = group_one_schedule if is_requested_first_group else group_two_schedule
     output(group_schedule, requested_weekday, last_chat_id, greet_bot)
-    greet_bot.send_message(
-                last_chat_id,
-                '''
-                    Четверг\n\n
-                    9:00-10:20: {}\n\n
-                    10:30-11:50: {}\n\n
-                    12:00-13:20: {}\n\n
-                    13:30-14:50: {}\n\n
-                    15:00-16:20: {}\n\n
-                    16:30-17:50: {}\n
-                '''.format(
-                        'Лекц./Пр. Проф. этика Лапшин И.Е. 104',
-                        'Пр. Матан 261' if is_requested_first_group else 'Пр. История 258',
-                        'Лекц. Матан 263',
-                        'Пр. История 264' if is_requested_first_group else 'Пр. Матан 261',
-                        'Обед',
-                        'Лаб. Компы 422'  if is_requested_first_group else ''
-                    ).replace('    ', '')
-    )
+
     new_offset = last_update_id + 1
 
 if __name__ == '__main__':  
