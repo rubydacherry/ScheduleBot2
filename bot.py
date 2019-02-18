@@ -1,5 +1,6 @@
 import requests
 import datetime
+import math
 import time
 from time import sleep
 
@@ -34,23 +35,49 @@ class BotHandler:
 
 def getWeekDay(wd):
     if wd == 'понедельник':
-        return 0
+        return 'Monday'
     elif wd == 'вторник':
-        return 1;
+        return 'Tuesday'
     elif wd == 'среда':
-        return 2
+        return 'Wednesday'
     elif wd == 'четверг':
-        return 3;
+        return 'Thursday'
     elif wd == 'пятница':
-        return 4
+        return 'Friday'
     elif wd == 'суббота':
-        return 5
+        return 'Saturday'
     elif wd == 'воскресенье':
-        return 6
+        return 'Monday'
+
+def output(group_schedule, requested_weekday, last_chat_id, greet_bot):
+    amount = len(group_schedule[requested_weekday])
+    greet_bot.send_message(
+            last_chat_id,
+            '''
+                {}\n\n
+                9:00-10:20: {}\n\n
+                10:30-11:50: {}\n\n
+                12:00-13:20: {}\n\n
+                13:30-14:50: {}\n\n
+                15:00-16:20: {}\n\n
+                16:30-17:50: {}\n\n
+                17:50-19:20: {}\n
+            '''.format(
+                    requested_weekday,
+                    group_schedule[requested_weekday][0] if amount > 0 else '',
+                    group_schedule[requested_weekday][1] if amount > 1 else '',
+                    group_schedule[requested_weekday][2] if amount > 2 else '',
+                    group_schedule[requested_weekday][3] if amount > 3 else '',
+                    group_schedule[requested_weekday][4] if amount > 4 else '',
+                    group_schedule[requested_weekday][5] if amount > 5 else '',
+                    group_schedule[requested_weekday][6] if amount > 6 else '',
+                ).replace('    ', '')
+        )
+        
 
 token = '693504057:AAF56kZHnpjAmWjvNiwLWTaEh0m0WBkQnbY'
 greet_bot = BotHandler(token)
-is_week_odd = True
+is_week_even = True
 is_new_week = False
 
 '''
@@ -61,18 +88,13 @@ is_new_week = False
 
 def main():
     new_offset = None
-    is_week_odd = False
+    is_week_even = False
 
     while True:
 
         today = datetime.datetime.today()
 
-        if today.weekday() == 5 and is_new_week:
-            is_week_odd = not is_week_odd
-            is_new_week == False
-
-        if today.weekday() == 6:
-            is_new_week == True
+        is_week_even = True if (math.ceil(datetime.date.max.toordinal() / 7) % 2) == 1 else False
 
         greet_bot.get_updates(new_offset)
         last_update = greet_bot.get_last_update()
@@ -97,127 +119,102 @@ def main():
         else:
             requested_weekday = getWeekDay(requested_weekday)
 
-        # понедельник
-        if requested_weekday == 0:
-            greet_bot.send_message(
-                last_chat_id,
-                '''
-                    Понедельник\n\n
-                    9:00-10:20: {}\n\n
-                    10:30-11:50: {}\n\n
-                    12:00-13:20: {}\n\n
-                    13:30-14:50: {}\n\n
-                    15:00-16:20: {}\n\n
-                    16:30-17:50: {}\n\n
-                    17:50-19:20: {}\n
-                '''.format(
-                        '',
-                        'Пр. Алгебра 473' if is_requested_first_group else '',
-                        'Лекц. Алгебра, Попов А.М., 260',
-                        'Обед',
-                        'Пр. Иностранный язык 475 / Русский язык 402',
-                        'Пр. Иностранный язык 475 / Русский язык 402' if is_week_odd else 'ДПО "Модуль переводчика" 475 / Русский язык 402',
-                        'ДПО "Модуль переводчика" 475'
-                    ).replace('    ', '')
-            )
+    group_one_schedule = {
+                            'Monday': [
+                                        '', 
+                                    'Пр. Алгебра 473' if is_week_even else '',
+                                    'Лекц. Алгебра, Попов А.М., 260',
+                                    'Обед',
+                                    'Пр. Иностранный язык',
+                                    'Пр. Иностранный язык' if is_week_even else 'ДПО "Модуль переводчика"',
+                                    'ДПО "Модуль переводчика"'
+                                    ],
+                            
+                            'Tuesday': [
+                                        'Лекц. Компы, Аносова Н.П. 495а',
+                                        'Лаб. Компы, ДК-3',
+                                        'Обед',
+                                        'Прикладная физическая культура, Мальченко А.Д., ФОК РУДН'
+                                    ],
 
-        # вторник
-        elif requested_weekday == 1:
-            greet_bot.send_message(
-                last_chat_id,
-                '''
-                    Вторник\n\n
-                    9:00-10:20: {}\n\n
-                    10:30-11:50: {}\n\n
-                    12:00-13:20: {}\n\n
-                    13:30-14:40: {}\n
-                '''.format(
-                        'Лекц. Компы, Аносова Н.П. 495а',
-                        'Лаб. Компы, ДК-3' if is_requested_first_group else 'Пр. Математический анализ 258' ,
-                        'Обед',
-                        'Прикладная физическая культура, Мальченко А.Д., ФОК РУДН'
-                    ).replace('    ', '')
-            )
+                            'Wednesday': [
+                                            'Пр. Алгебра 104',
+                                            'Пр. Аналитическая геометрия 473',
+                                            'Лекц. Аналитическая геометрия, Гольдман М.Л., 260',
+                                            'Обед',
+                                            'Лекция Деловой Этикет Варламова И.Ю. 397' if is_week_even else 'Лекц. Алгебра 263',
+                                            'Пр. Деловой этикет 262' if is_week_even else ''
+                                        ],
+                        
+                            'Thursday': [
+                                            'Лекц./Пр. Проф. этика Лапшин И.Е. 104',
+                                            'Пр. История 258',
+                                            'Лекц. Матан 263',
+                                            'Пр. Матан 261',
+                                            'Обед',
+                                            ''
+                                        ],
 
-        # среда
-        elif requested_weekday == 2:
-            greet_bot.send_message(
-                last_chat_id,
-                '''
-                    Среда\n\n
-                    9:00-10:20: {}\n\n
-                    10:30-11:50: {}\n\n
-                    12:00-13:20: {}\n\n
-                    13:30-14:50: {}\n\n  
-                    15:00-16:20: {}\n\n
-                    16:30-17:50: {}\n
-                '''.format(
-                        'Пр. Аналитическая геометрия 264' if is_requested_first_group else 'Пр. Алгебра 104',
-                        'Пр. Алгебра 471' if is_requested_first_group else 'Пр. Аналитическая геометрия 273',
-                        'Лекц. Аналитическая геометрия, Гольдман М.Л., 260',
-                        'Обед',
-                        'Лекция Деловой Этикет Варламова И.Ю. 397 / Лекц. Алгебра 263',
-                        'Пр. Деловой этикет 262'
-                    ).replace('    ', '')
-            )
+                            'Friday': [
+                                        'Лекц. Математический анализ, Марченко В.В., 261'
+                                    ],
 
-        # четверг
-        elif requested_weekday == 3:
-            greet_bot.send_message(
-                last_chat_id,
-                '''
-                    Четверг\n\n
-                    9:00-10:20: {}\n\n
-                    10:30-11:50: {}\n\n
-                    12:00-13:20: {}\n\n
-                    13:30-14:50: {}\n\n
-                    15:00-16:20: {}\n\n
-                    16:30-17:50: {}\n
-                '''.format(
-                        'Лекц./Пр. Проф. этика Лапшин И.Е. 104',
-                        'Пр. Матан 261' if is_requested_first_group else 'Пр. История 258',
-                        'Лекц. Матан 263',
-                        'Пр. История 264' if is_requested_first_group else 'Пр. Матан 261',
-                        'Обед',
-                        'Лаб. Компы 422'  if is_requested_first_group else ''
-                    ).replace('    ', '')
-            )
+                            'Saturday': [
+                                        'Лекц. Политология 104' if is_week_even else 'Пр. Психология Зал 1',
+                                        'Лекц. Политология 104' if is_week_even else 'Пр. Психология Зал 1'
+                                        ]
+                        }
 
-        # пятница
-        elif requested_weekday == 4:
-            greet_bot.send_message(
-                last_chat_id,
-                '''
-                    Пятница\n\n
-                    12:00-13:20: {}\n\n
-                    13:30-14:50: {}\n
-                '''.format(
-                        'Лекц. Математический анализ, Марченко В.В., 261',
-                        '' if is_week_odd else 'Пр. Матан 260'
-                    ).replace('    ', '')
-            )
-        
-        # суббота
-        elif requested_weekday == 5:
-            greet_bot.send_message(
-                last_chat_id,
-                 '''
-                    Суббота\n\n
-                    9:00-10:20: {}\n\n
-                    10:30-11:50: {}\n
-                '''.format(
-                        'Лекц. Политология 104 / Пр. Психология Зал 1',
-                        'Пр. Политология 104 / Лекц. Психология Зал 1'
-                    ).replace('    ', '')
-                )
+    group_two_schedule = {
+                            'Monday': [
+                                        '', 
+                                    '' if is_week_even else 'Пр. Алгебра 473',
+                                    'Лекц. Алгебра, Попов А.М., 260',
+                                    'Обед',
+                                    'Пр. Иностранный язык',
+                                    'Пр. Иностранный язык' if is_week_even else 'ДПО "Модуль переводчика"',
+                                    'ДПО "Модуль переводчика"'
+                                    ],
+                            
+                            'Tuesday': [
+                                        'Лекц. Компы, Аносова Н.П. 495а',
+                                        'Пр. Математический анализ 258',
+                                        'Обед',
+                                        'Прикладная физическая культура, Мальченко А.Д., ФОК РУДН'
+                                    ],
 
-        # воскресенье
-        elif requested_weekday == 6:
-            greet_bot.send_message(last_chat_id, 'Sunday')
+                            'Wednesday': [
+                                            'Пр. Аналитическая геометрия 264',
+                                            'Пр. Алгебра 471',
+                                            'Лекц. Аналитическая геометрия, Гольдман М.Л., 260',
+                                            'Обед',
+                                            'Лекция Деловой Этикет Варламова И.Ю. 397' if is_week_even else 'Лекц. Алгебра 263',
+                                            'Пр. Деловой этикет 262' if is_week_even else ''
+                                        ],
+                        
+                            'Thursday': [
+                                            'Лекц./Пр. Проф. этика Лапшин И.Е. 104',
+                                            'Пр. История 258',
+                                            'Лекц. Матан 263',
+                                            'Пр. Матан 261',
+                                            'Обед',
+                                            ''
+                                        ],
 
-        new_offset = last_update_id + 1
+                            'Friday': [
+                                        'Лекц. Математический анализ, Марченко В.В., 261'
+                                    ],
 
+                            'Saturday': [
+                                        'Лекц. Политология 104' if is_week_even else 'Пр. Психология Зал 1',
+                                        'Лекц. Политология 104' if is_week_even else 'Пр. Психология Зал 1'
+                                        ]
+    }
 
+    group_schedule = group_one_schedule if is_requested_first_group else group_two_schedule
+    output(group_schedule, requested_weekday, last_chat_id, greet_bot)
+
+    new_offset = last_update_id + 1
 
 if __name__ == '__main__':  
     try:
