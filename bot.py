@@ -65,12 +65,12 @@ def output(group_schedule, requested_weekday, last_chat_id, greet_bot):
             '''.format(
                     requested_weekday,
                     group_schedule[requested_weekday][0] if amount > 0 else '',
-                    group_schedule[requested_weekday][1] if amount > 1 else '',
-                    group_schedule[requested_weekday][2] if amount > 2 else '',
-                    group_schedule[requested_weekday][3] if amount > 3 else '',
-                    group_schedule[requested_weekday][4] if amount > 4 else '',
-                    group_schedule[requested_weekday][5] if amount > 5 else '',
-                    group_schedule[requested_weekday][6] if amount > 6 else '',
+                    '''group_schedule[requested_weekday][1] if amount > 1 else''' '',
+                    '''group_schedule[requested_weekday][2] if amount > 2 else''' '',
+                    '''group_schedule[requested_weekday][3] if amount > 3 else''' '',
+                    '''group_schedule[requested_weekday][4] if amount > 4 else''' '',
+                    '''group_schedule[requested_weekday][5] if amount > 5 else''' '',
+                    '''group_schedule[requested_weekday][6] if amount > 6 else''' '',
                 ).replace('    ', '')
         )
         
