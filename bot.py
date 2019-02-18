@@ -197,9 +197,9 @@ def main():
                                             ]
         }
 
-        #group_schedule = group_one_schedule if is_requested_first_group else group_two_schedule
-        #output(group_schedule, requested_weekday, last_chat_id, greet_bot)
-        greet_bot.send_message(last_chat_id, 'Hello')
+        group_schedule = group_one_schedule if is_requested_first_group else group_two_schedule
+        output(group_schedule, requested_weekday, last_chat_id, greet_bot)
+
         new_offset = last_update_id + 1
 
 if __name__ == '__main__':  
