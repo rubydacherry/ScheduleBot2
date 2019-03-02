@@ -85,7 +85,7 @@ def main():
 
     while True:
 
-        is_week_even = True if (math.ceil(datetime.date.max.toordinal() / 7) % 2) == 1 else False
+        is_week_even = True if (math.ceil((datetime.date.max.toordinal() + 1) / 7)  % 2) == 1 else False
 
         greet_bot.get_updates(new_offset)
         last_update = greet_bot.get_last_update()
@@ -156,7 +156,7 @@ def main():
 
         group_two_schedule = {
                                 'Monday': [
-                                            '', 
+                                        '', 
                                         '' if is_week_even else 'Пр. Алгебра 473',
                                         'Лекц. Алгебра, Попов А.М., 260',
                                         'Обед',
